@@ -75,3 +75,30 @@
 .stage-cover.cinematic-stage .stage-jp{font-size:clamp(18px,2vw,27px);color:#f6f1e8}
 @media(max-width:760px){.hero::before{background-position:60% center}.map-canvas.cinematic-map{min-height:260px}.map-3d-caption{top:18px;left:18px;right:18px}.map-3d-caption strong{font-size:19px}.map-canvas.cinematic-map .map-legend{left:8px;right:8px;font-size:7px;letter-spacing:.02em}.stage-cover.cinematic-stage{min-height:340px}.stage-cover.cinematic-stage h1{font-size:clamp(50px,15vw,78px)}}
 @media(prefers-reduced-motion:reduce){.map-3d-scene img,.stage-3d-backdrop{transform:none!important;transition:none!important}}
+
+
+/* NILE QUEST v1.4 - bilingual UI and persistent dark mode */
+.ui-switches{display:flex;align-items:center;gap:8px}.ui-switch{padding:7px 10px;min-width:42px;min-height:32px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.22);color:#f9e5bf;border-radius:100px;font:700 11px/1.4 Arial,sans-serif;white-space:nowrap;transition:background .2s,border-color .2s}.ui-switch:hover{background:rgba(244,219,164,.16);border-color:#e5c88f}.ui-switch span{font-weight:500}.nav-end{gap:14px}
+html[data-theme=dark]{color-scheme:dark;--sand:#101d25;--paper:#152a34;--ink:#e7edea;--edge:#304853;--muted:#b0bdc1;background:#101d25}
+html[data-theme=dark] body{background:#101d25;color:#e7edea}
+html[data-theme=dark] .route-intro{background:#122630}html[data-theme=dark] .story{background:#1c3038}html[data-theme=dark] .story p:not(.eyebrow){color:#bdc6c6}
+html[data-theme=dark] .app-main{background:#101d25}html[data-theme=dark] .metrics,html[data-theme=dark] .destination,html[data-theme=dark] .result-card,html[data-theme=dark] .quiz-container,html[data-theme=dark] .weather,html[data-theme=dark] .auth-dialog,html[data-theme=dark] .ranking-page .leaderboard{background:#192f3a;border-color:#37515a;color:#f0f1eb}
+html[data-theme=dark] .passport-preview,html[data-theme=dark] .passport-book{background:#223844;color:#f0f1eb;border-color:#435962}html[data-theme=dark] .passport-stamp{color:#d8c398;border-color:#bca16d}html[data-theme=dark] .passport-stamp.collected{color:#fce8bc;background:#344746}html[data-theme=dark] .passport-header,html[data-theme=dark] .passport-bottom{border-color:#76848c;color:#d0b585}
+html[data-theme=dark] .metrics b,html[data-theme=dark] .welcome h1,html[data-theme=dark] .stage-info h2,html[data-theme=dark] .section-heading h1,html[data-theme=dark] .section-heading h2,html[data-theme=dark] .passport-top h1,html[data-theme=dark] .ranking-page h1,html[data-theme=dark] .result-card h1,html[data-theme=dark] .quiz-question h1,html[data-theme=dark] .passport-preview h3{color:#f2ece1}
+html[data-theme=dark] .section-top>p:last-child,html[data-theme=dark] .welcome>div>p:last-child,html[data-theme=dark] .section-heading>div>p:last-child,html[data-theme=dark] .stage-info>div>p:not(.eyebrow),html[data-theme=dark] .ranking-page>p:not(.eyebrow),html[data-theme=dark] .passport-top>div>p:last-child,html[data-theme=dark] .result-card>p:not(.eyebrow),html[data-theme=dark] .auth-dialog>p:not(.eyebrow){color:#c2cac7}
+html[data-theme=dark] .option,html[data-theme=dark] .chip,html[data-theme=dark] .auth-dialog input{background:#223f4a;border-color:#53707a;color:#f1ece3}
+html[data-theme=dark] .option:hover:not(:disabled){background:#2e4e58;border-color:#c9aa76}
+html[data-theme=dark] .option.correct{background:#214c3f;color:#c9f7de;border-color:#62aa88}html[data-theme=dark] .option.wrong{background:#542f32;color:#ffe2db;border-color:#c58080}
+html[data-theme=dark] .quiz-question p,html[data-theme=dark] .passport-preview>p:not(.eyebrow),html[data-theme=dark] .weather p:not(.eyebrow){color:#c0cecc}
+html[data-theme=dark] .answer-feedback{background:#204638;color:#f1fbf5}html[data-theme=dark] .answer-feedback.incorrect{background:#553a32;color:#f9ead9}
+html[data-theme=dark] .leaderboard-row,html[data-theme=dark] .metrics>div,html[data-theme=dark] .result-metrics{border-color:#38525b}html[data-theme=dark] .leaderboard-head{background:#0d1f29}
+html[data-theme=dark] .btn.outline,html[data-theme=dark] .btn.ghost{color:#f6f0e4;border-color:#a8b4b5}html[data-theme=dark] .btn.outline:hover{background:#324a55}
+html[data-theme=dark] .modal-wrap{background:#071118df}html[data-theme=dark] .auth-tabs{border-color:#4b646b}html[data-theme=dark] .auth-tabs button.on{color:#f4d19a}html[data-theme=dark] .auth-dialog input::placeholder{color:#acbdc2}
+html[data-theme=dark] .game-page{background:linear-gradient(180deg,#11252e 0,#243d47 43%,#101d25 43%)}
+@media(max-width:1000px){.nav{gap:9px}.nav-items{gap:16px}.nav-end{gap:8px}.ui-switches{gap:4px}.ui-switch{padding:7px 8px}}
+@media(max-width:760px){.nav-end{gap:7px}.ui-switch{font-size:10px;padding:6px 7px}.ui-switch span{display:none}.brand{min-width:0}.nav-items{gap:10px}}
+
+html[data-theme=dark] .mini-stop{background:#18313b;color:#f2ece1;border-color:#375560}
+html[data-theme=dark] .mini-stop small,html[data-theme=dark] .dest-info p,html[data-theme=dark] .weather small{color:#c1d1d0}
+html[data-theme=dark] .chip{background:#264550;color:#f0e8d9}
+html[data-theme=dark] .section-top h2,html[data-theme=dark] .story h2,html[data-theme=dark] .passport-top h1{color:#f1eadf}

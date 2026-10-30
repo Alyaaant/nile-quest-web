@@ -1,5 +1,7 @@
 # NILE QUEST — From Cairo to the World
 
+**v1.4:** 日本語/English切替、全15問の英語翻訳、ライト/ダークモード。設定はブラウザに保存されます。
+
 **A working, original-design geography adventure for a live developer interview.**
 
 A 5-stage browser game that starts in Cairo and ends in Tokyo.

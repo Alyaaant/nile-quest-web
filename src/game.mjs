@@ -1,3 +1,4 @@
+import {englishQuestions} from './game-en.mjs';
 /** Curated game content kept separate from persistence and UI. */
 export const stages = Object.freeze([
   { id: 'egypt', order: 0, country: 'Egypt', jp: 'エジプト', city: 'Cairo', flag: '🇪🇬', coords: [30.0444, 31.2357], tag: 'THE BEGINNING', landmark: 'Pyramids of Giza', theme: 'sand', intro: 'すべての旅は、ナイル川のほとりから。', stamp: '01' },
@@ -37,7 +38,7 @@ export const questions = Object.freeze({
 
 export function stageById(id) { return stages.find(s => s.id === id) ?? null; }
 export function getQuestion(stageId,index){ return questions[stageId]?.[index] ?? null; }
-export function publicQuestion(q,index,total=3){return {id:q.id,prompt:q.prompt,options:q.options,category:q.category,index,total};}
+export function publicQuestion(q,index,total=3){return {id:q.id,prompt:q.prompt,options:q.options,category:q.category,index,total,en:englishQuestions[q.id]};}
 export function scoreAnswer({correct,streak,remainingSeconds}) {
   if(!correct) return {points:0,nextStreak:0};
   return {points:100+(streak>=1?25:0)+Math.max(0,Math.min(20,Math.floor(remainingSeconds))),nextStreak:streak+1};

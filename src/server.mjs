@@ -4,6 +4,7 @@ import {fileURLToPath} from 'node:url';
 import {dirname,join,extname,normalize} from 'node:path';
 import {openDb,hashPassword,verifyPassword,makeToken,tokenHash,newId,now,provisionDemo} from './db.mjs';
 import {stages,questions,getQuestion,stageById,publicStages,publicQuestion,scoreAnswer,unlockIndex} from './game.mjs';
+import {englishQuestions} from './game-en.mjs';
 
 const siteDir=join(dirname(dirname(fileURLToPath(import.meta.url))),'public');
 const mime={'.html':'text/html; charset=utf-8','.js':'text/javascript; charset=utf-8','.css':'text/css; charset=utf-8','.svg':'image/svg+xml','.png':'image/png','.webp':'image/webp','.ico':'image/x-icon','.webmanifest':'application/manifest+json'};
@@ -175,7 +176,7 @@ function answer(db,user,b){
       cleared_at=CASE WHEN progress.cleared_at IS NOT NULL THEN progress.cleared_at ELSE excluded.cleared_at END`).run(user.id,r.stage_id,newScore,cleared,1,cleared?now():null);
   }
   const next=done?null:publicRun(db.prepare('SELECT * FROM runs WHERE id=?').get(r.id));
-  return {correct,timedOut:b.choice===-1||timeLeft===0,points,correctIndex:q.correct,explanation:q.note,score:newScore,correctCount:newCorrect,done,cleared:done?newCorrect>=2:false,next,stages:done?publicStages(progress(db,user.id)):null};
+  return {correct,timedOut:b.choice===-1||timeLeft===0,points,correctIndex:q.correct,explanation:q.note,explanationEn:englishQuestions[q.id]?.note||q.note,score:newScore,correctCount:newCorrect,done,cleared:done?newCorrect>=2:false,next,stages:done?publicStages(progress(db,user.id)):null};
 }
 
 if(process.argv[1]&&fileURLToPath(import.meta.url)===process.argv[1]){

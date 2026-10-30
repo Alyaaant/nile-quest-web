@@ -10,4 +10,5 @@ data/*
 .DS_Store
 *.log
 coverage/
+
 .visual-backup/
