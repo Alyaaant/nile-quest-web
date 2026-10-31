@@ -168,3 +168,30 @@ button:focus-visible,.nav-link:focus-visible,.route-card:focus-within{outline:2p
  .modal-wrap{align-items:safe center;overscroll-behavior:contain}
 }
 @media(prefers-reduced-motion:reduce){.svg-arrow svg{transition:none!important}}
+
+
+/* v1.7: explicit SVG everywhere so no variation-selector emoji arrows */
+.svg-arrow{display:inline-grid!important;place-items:center;flex:0 0 auto;vertical-align:middle;line-height:0;min-width:18px;min-height:18px}
+.svg-arrow .ui-arrow,.ui-theme-icon{display:block!important;width:19px!important;height:19px!important;stroke:currentColor;fill:none!important;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round;pointer-events:none}
+.nav .ui-theme-icon{width:16px!important;height:16px!important}
+button .svg-arrow{margin-left:7px}button:focus-visible{outline-offset:4px}.text-button.back{display:inline-flex;align-items:center;gap:8px}
+.hero-edge .svg-arrow{margin-right:7px}.hero-edge .ui-arrow{width:15px!important;height:15px!important}
+.route-bottom .ui-arrow{width:18px!important;height:18px!important}
+html,body{max-width:100%;overflow-x:clip}.nav,.hero,.route-grid,.route-card,.app-main,.map-canvas,.destination-list,.destination{min-width:0}
+@media(max-width:760px){
+ .nav{width:100%;padding-inline:12px;gap:9px;flex-wrap:wrap;height:auto;min-height:64px}
+ .nav-items{width:100%;display:flex;order:3;flex-wrap:nowrap;justify-content:space-between;gap:4px;overflow-x:auto;padding-bottom:10px}
+ .nav-items .nav-link{white-space:nowrap;padding:9px 5px;font-size:clamp(9px,2.7vw,12px);min-width:0}
+ .nav-end{margin-left:auto;min-width:0}.nav-end .small{font-size:10px;white-space:nowrap}
+ .hero-inner{padding:50px 20px 42px}.hero h1{font-size:clamp(36px,9vw,54px);line-height:1.16;max-width:100%;word-break:normal;overflow-wrap:anywhere}
+ .hero-actions{display:grid;grid-template-columns:minmax(0,1fr)}.hero-actions .btn{width:100%;min-width:0;justify-content:center;white-space:normal;line-height:1.4}
+ .route-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.route-card{min-width:0}.route-card h3{overflow-wrap:anywhere;font-size:clamp(24px,5.6vw,36px)}
+ .destination{grid-template-columns:minmax(0,1fr);gap:10px}.destination .dest-info{min-width:0;overflow-wrap:anywhere}.destination .btn{grid-column:1/-1}
+ .hero-edge{font-size:10px;line-height:1.5}.hero-edge span{display:inline-flex;gap:4px;align-items:center}
+ #auth-layer .auth-dialog{max-width:calc(100vw - 24px);max-height:calc(100dvh - 24px);overflow-y:auto;overscroll-behavior:contain}
+ #auth-layer input{font-size:16px;min-height:50px;max-width:100%}
+ .passport-stamps{min-width:0}
+}
+@media(max-width:490px){.route-grid{grid-template-columns:minmax(0,1fr)}.route-card{min-height:280px}.route-card h3{font-size:clamp(32px,9vw,44px)}.nav .brand-text{font-size:12px}.nav-items .nav-link{font-size:10px}}
+@media(max-width:360px){.hero h1{font-size:clamp(31px,8.7vw,40px)}.nav .brand-text small{display:none}.route-card h3{font-size:34px}}
+@media(prefers-reduced-motion:reduce){.svg-arrow .ui-arrow{animation:none!important;transition:none!important}}
