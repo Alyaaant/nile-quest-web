@@ -102,3 +102,69 @@ html[data-theme=dark] .mini-stop{background:#18313b;color:#f2ece1;border-color:#
 html[data-theme=dark] .mini-stop small,html[data-theme=dark] .dest-info p,html[data-theme=dark] .weather small{color:#c1d1d0}
 html[data-theme=dark] .chip{background:#264550;color:#f0e8d9}
 html[data-theme=dark] .section-top h2,html[data-theme=dark] .story h2,html[data-theme=dark] .passport-top h1{color:#f1eadf}
+
+
+/* NILE QUEST v1.5: stable login focus and mobile presentation polish */
+#auth-layer .modal-wrap{position:fixed;inset:0;z-index:120;overscroll-behavior:contain;display:flex;justify-content:center;align-items:center;overflow-y:auto;padding:max(20px,env(safe-area-inset-top)) 18px max(20px,env(safe-area-inset-bottom));}
+#auth-layer .auth-dialog{flex:none;max-height:min(96dvh,760px);overflow-y:auto;overscroll-behavior:contain;border-radius:16px;box-shadow:0 26px 100px rgba(3,13,21,.48);}
+#auth-layer .auth-dialog input{font-size:16px;min-height:50px;touch-action:manipulation;border-radius:7px;}
+#auth-layer .auth-dialog button{cursor:pointer;touch-action:manipulation;}
+.svg-arrow{display:inline-flex;align-items:center;justify-content:center;line-height:1;flex-shrink:0;vertical-align:middle}
+.svg-arrow svg{display:block;transition:transform .2s ease}
+button:hover .svg-arrow svg{transform:translate(2px,-2px)}
+button:focus-visible,.nav-link:focus-visible,.route-card:focus-within{outline:2px solid #eac58a;outline-offset:3px}
+.route-bottom .svg-arrow{border:1px solid rgba(255,255,255,.58);background:rgba(10,28,36,.2);backdrop-filter:blur(10px);width:32px;height:32px;border-radius:50%;}
+.hero-actions .svg-arrow{margin-left:9px}
+.hero h1{overflow-wrap:normal;word-break:normal}
+@media (max-width:760px){
+  .hero{min-height:0;}
+  .hero-inner{padding:72px 22px 50px;}
+  .hero h1{font-size:clamp(36px,8.4vw,56px);line-height:1.25;letter-spacing:-.038em;max-width:100%;}
+  .hero h1 em{display:block;text-wrap:balance;}
+  .hero-copy{font-size:clamp(13px,3.6vw,16px);line-height:1.9;overflow-wrap:anywhere;}
+  .hero-actions{display:flex;flex-direction:column;align-items:stretch;gap:13px;}
+  .hero-actions .btn{width:100%;min-height:56px;display:flex;justify-content:center;align-items:center;gap:8px;}
+  .hero-stat{margin-top:48px;gap:12px;}
+  .route-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;}
+  .route-card{min-width:0;overflow:hidden;}
+  .route-card h3{font-size:clamp(22px,6vw,30px);overflow-wrap:anywhere;}
+  .route-bottom{font-size:10px;}
+  .hero-edge{position:relative;}
+  #auth-layer .auth-dialog{padding:26px 22px;max-height:calc(100dvh - 32px)}
+}
+@media (max-width:420px){
+  .route-grid{grid-template-columns:1fr;gap:16px;}
+  .route-card{height:278px;}
+  .route-card h3{font-size:36px;}
+  .hero h1{font-size:clamp(33px,8.2vw,43px);}
+  .hero-kicker{font-size:9px;letter-spacing:.11em;}
+  .hero-stat{gap:10px;}
+}
+@media(prefers-reduced-motion:reduce){.svg-arrow svg{transition:none!important}}
+
+/* v1.6 iPhone Safari mobile controls and CTA icon alignment */
+.svg-arrow{display:inline-grid!important;place-items:center;flex:0 0 auto;line-height:0;min-width:20px;min-height:20px;vertical-align:middle}
+.svg-arrow svg{display:block!important;width:19px;height:19px;stroke-width:1.85;fill:none;stroke-linecap:round;stroke-linejoin:round;pointer-events:none}
+.route-bottom .svg-arrow{width:35px;min-width:35px;height:35px;min-height:35px;border-radius:50%;background:rgba(8,31,40,.38);border:1px solid rgba(255,255,255,.6);box-shadow:0 8px 23px rgba(0,0,0,.15)}
+.route-bottom .svg-arrow svg{width:18px;height:18px}
+@media(max-width:600px){
+ .hero-inner{padding-inline:clamp(20px,5vw,28px)}
+ .hero h1{font-size:clamp(35px,9.2vw,54px);line-height:1.17;overflow-wrap:anywhere}
+ .hero h1 em{word-break:normal;overflow-wrap:anywhere}
+ .hero-copy{font-size:14px;line-height:1.85}
+ .hero-actions{display:grid;grid-template-columns:1fr;gap:12px}
+ .hero-actions .btn{width:100%;min-width:0;display:flex;align-items:center;justify-content:center;gap:10px}
+ .route-grid{grid-template-columns:minmax(0,1fr);gap:14px}
+ .route-card{height:300px;min-width:0}
+ .route-card h3{font-size:clamp(35px,10vw,54px);line-height:1.08}
+ .route-bottom{display:flex;align-items:center;justify-content:space-between;gap:12px;min-width:0}
+ .route-bottom .svg-arrow{margin-left:auto}
+ .route-bottom .svg-arrow svg{width:18px;height:18px}
+ .destination{display:grid;grid-template-columns:auto minmax(0,1fr);align-items:center;gap:12px;padding:16px}
+ .dest-info{min-width:0}.dest-info p{overflow-wrap:anywhere}
+ .destination .btn{grid-column:1/-1;display:flex;align-items:center;justify-content:center;gap:10px;width:100%;min-height:44px}
+ .auth-dialog{max-height:calc(100dvh - 28px);overflow-y:auto;overscroll-behavior:contain}
+ .auth-dialog input{font-size:16px} /* Prevent Safari focus auto-zoom */
+ .modal-wrap{align-items:safe center;overscroll-behavior:contain}
+}
+@media(prefers-reduced-motion:reduce){.svg-arrow svg{transition:none!important}}

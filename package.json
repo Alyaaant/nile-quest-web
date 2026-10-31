@@ -1,6 +1,6 @@
 {
   "name": "nile-quest-interview",
-  "version": "1.4.0",
+  "version": "1.6.0",
   "private": true,
   "description": "World-travel quiz adventure from Cairo to Tokyo",
   "type": "module",
